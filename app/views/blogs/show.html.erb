@@ -17,7 +17,7 @@
     <strong>Comment:</strong>
     <%# ErrorCause: TypeCastError: String can't be coerced into Integer %>
     <%# FixReason: use to_s to convert Integer to String %>
-    <%= @blog.comments.count.to_s + "comments" %>
+    <%= "#{@blog.comments.count} comments" %>
   </p>
 
   <p>
