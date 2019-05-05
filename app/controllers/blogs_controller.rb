@@ -1,5 +1,7 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update]
+  # ErrorCause: undefined method `destroy' for nil:NilClass, @blog is nil
+  # FixReason: add :destroy to before_action callback
+  before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
   def index
     @blogs = Blog.all
