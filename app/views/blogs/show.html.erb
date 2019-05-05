@@ -28,6 +28,9 @@
 <p>
   <%= render 'comments/form', blog: @blog %>
 </p>
-
-<%= link_to 'Edit', '/blogs/#{blog.id}/edit' %> |
+<%# ErrorCause: can't render blog_edit_path %>
+<%# FixReason: use double quote to string interpolation %>
+<%# ErrorCause: undefined local variable or method `blog' %>
+<%# FixReason: set instance variable @blog %>
+<%= link_to 'Edit', "/blogs/#{@blog.id}/edit" %> |
 <%= link_to 'Back', blogs_path %>
